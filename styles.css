@@ -1,0 +1,191 @@
+/* :root with CSS variables for consistent styling */
+:root {
+  --font-primary: 'Montserrat', sans-serif;
+  /* ===== Updated background color here ===== */
+  --color-bg: #E6EED6;
+  --color-text: #333;
+  --color-primary: #80A4ED;
+  --color-secondary: #AD5C83;
+  --color-accent1: #F9B5AC;
+  --color-accent2: #CFD186;
+  --color-white: #fff;
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Basic reset and global settings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-bg); /* Uses the updated palette color */
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* Centered container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+/* Header styling */
+header {
+  background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+  color: var(--color-white);
+  text-align: center;
+  padding: 4rem 1rem;
+  margin-bottom: 2rem;
+  border-radius: 0 0 20px 20px;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: auto;
+}
+
+/* Main content */
+main {
+  margin-bottom: 2rem;
+}
+
+/* Section styling */
+section {
+  background-color: var(--color-white);
+  margin: 2rem 0;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+/* Intro section with a gradient background */
+#intro {
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+  color: var(--color-white);
+}
+
+/* Intro content (text + images) */
+.intro-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* ===== Updated .intro-images to separate the 2 images horizontally ===== */
+.intro-images {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: row;           /* Changed from column to row */
+  justify-content: space-between;
+  gap: 1.5rem;                   /* Space between images */
+}
+
+.intro-images img {
+  width: 100%;
+  max-width: 48%;                /* Each image takes up about half */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  object-fit: cover;
+}
+
+.intro-text {
+  flex: 1 1 300px;
+}
+
+/* Nadelen section with a gradient background */
+#nadelen {
+  background: linear-gradient(135deg, var(--color-accent1), var(--color-accent2));
+  color: var(--color-white);
+}
+
+#nadelen ul {
+  list-style-type: none;
+}
+
+#nadelen li {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#nadelen li h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Section headings */
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-white);
+}
+
+/* Footer styling */
+footer {
+  background-color: var(--color-accent2);
+  color: var(--color-white);
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+  border-radius: 20px 20px 0 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+  
+  header p {
+    font-size: 1rem;
+  }
+  
+  section h2 {
+    font-size: 1.8rem;
+  }
+  
+  #nadelen li h3 {
+    font-size: 1.3rem;
+  }
+  
+  section {
+    padding: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  /* Stack images on smaller devices for readability */
+  .intro-images {
+    flex-direction: column; /* Now they appear one above the other */
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+  
+  header p {
+    font-size: 0.9rem;
+  }
+  
+  section h2 {
+    font-size: 1.6rem;
+  }
+  
+  #nadelen li h3 {
+    font-size: 1.2rem;
+  }
+}
