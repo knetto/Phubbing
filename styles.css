@@ -199,22 +199,36 @@ footer {
 }
 
 
-/* Custom Scrollbar for WebKit browsers */
+/* Minimal custom scroll bar styling using your color palette */
+
+/* For Firefox: set the thumb & track colors, and reduce the width */
+html {
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: var(--color-primary) var(--color-bg);
+}
+
+/* For WebKit-based browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 8px; /* Adjust width for a minimal feel */
+  background-color: var(--color-bg); /* Scrollbar track color */
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
+  background-color: var(--color-bg);
+  /* Optional: Add border or subtle styling for the track
+     border: 1px solid var(--color-accent1);
+     border-radius: 4px;
+  */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.4);
+  background-color: var(--color-primary); /* Thumb color */
   border-radius: 4px;
+  /* A small border to create space around the thumb */
+  border: 2px solid var(--color-bg); 
 }
 
-/* Custom Scrollbar for Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.1);
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-secondary);
 }
+
