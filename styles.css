@@ -1,7 +1,6 @@
 /* :root with CSS variables for consistent styling */
 :root {
   --font-primary: 'Montserrat', sans-serif;
-  /* ===== Updated background color here ===== */
   --color-bg: #E6EED6;
   --color-text: #333;
   --color-primary: #80A4ED;
@@ -21,7 +20,7 @@
 
 body {
   font-family: var(--font-primary);
-  background-color: var(--color-bg); /* Uses the updated palette color */
+  background-color: var(--color-bg);
   color: var(--color-text);
   line-height: 1.6;
 }
@@ -83,24 +82,25 @@ section {
   gap: 2rem;
 }
 
-/* ===== Updated .intro-images to separate the 2 images horizontally ===== */
+/* Images container */
 .intro-images {
   flex: 1 1 100%;
   display: flex;
-  flex-direction: row;           /* Changed from column to row */
+  flex-direction: row;       /* Initially, display images side by side */
   justify-content: space-between;
-  gap: 1.5rem;                   /* Space between images */
+  gap: 1.5rem;
 }
 
 .intro-images img {
   width: 100%;
-  max-width: 48%;                /* Each image takes up about half */
+  max-width: 48%;            /* Each image takes up about half of the container */
   height: auto;
   border-radius: 10px;
   box-shadow: var(--shadow);
   object-fit: cover;
 }
 
+/* Text section in intro */
 .intro-text {
   flex: 1 1 300px;
 }
@@ -143,7 +143,7 @@ footer {
   border-radius: 20px 20px 0 0;
 }
 
-/* Responsive */
+/* Responsive styling */
 @media (max-width: 768px) {
   header h1 {
     font-size: 2.2rem;
@@ -168,7 +168,15 @@ footer {
 
   /* Stack images on smaller devices for readability */
   .intro-images {
-    flex-direction: column; /* Now they appear one above the other */
+    flex-direction: column;
+    align-items: center;  /* Center images horizontally when stacked */
+  }
+
+  .intro-images img {
+    width: 100%;
+    max-width: 100%;      /* Allow images to use the full width of the container */
+    display: block;
+    margin: 0 auto;       /* Center block images */
   }
 }
 
