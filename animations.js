@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const cards = Array.from(cardsContainer.children);
   const toggleBtn = document.getElementById('toggleButton');
   const searchInput = document.getElementById('searchInput');
-  const VISIBLE_COUNT = 5;
+  const VISIBLE_COUNT = 3;
   let expanded = false;
 
   // Visibility update (initieel vs. animatie)
