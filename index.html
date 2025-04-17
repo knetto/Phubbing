@@ -1,10 +1,10 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>#StopPhubbing</title>
-  <!-- Google Fonts voor een moderne uitstraling -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -13,68 +13,154 @@
   <header>
     <div class="container">
       <h1>#StopPhubbing</h1>
-      <p>
-        We kennen het allemaal: je zit gezellig met iemand te praten en… ping! Daar gaat de telefoon. Opeens zit je tegen een voorhoofd te praten terwijl de ander door Instagram scrollt. That, my friend, is phubben.
-      </p>
+      <p>We kennen het allemaal: je zit gezellig met iemand te praten en… ping! Daar gaat de telefoon. Opeens zit je tegen een voorhoofd te praten terwijl de ander door Instagram scrollt. That, my friend, is phubben.</p>
     </div>
   </header>
-  
-  <!-- Main content -->
-  <main class="container">
-    <!-- Introductie sectie -->
-    <section id="intro">
-      <div class="intro-content">
-        <!-- Tekstgedeelte -->
-        <div class="intro-text">
-          <h2>Wat is Phubbing?</h2>
-          <p>
-            Phubben is een samenstelling van de woorden <strong>phone</strong> en <strong>snubbing</strong> (negeren). Het betekent dat je iemand negeert of minder aandacht geeft omdat je met je telefoon bezig bent – bijvoorbeeld tijdens een gesprek, etentje of quality time momentje.
-          </p>
-          <p>
-            Phubbing lijkt misschien onschuldig, maar het heeft grote impact.
-          </p>
-        </div>
 
-        <!-- Afbeeldingengedeelte -->
-        <div class="intro-images">
-          <img src="img/imageBank.png" alt="Man op telefoon en vrouw boos">
-          <img src="img/imageKeuken.png" alt="Vrouw maakt eten en man op telefoon">
+  <!-- Leaderboard Wall of Shame -->
+  <section id="leaderboard">
+    <div class="container">
+      <h2>Wall of Shame</h2>
+
+      <!-- Search field -->
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Zoek op naam…">
+      </div>
+
+      <div class="cards" id="cardsContainer">
+        <!-- Kaart 1 -->
+        <div class="card">
+          <div class="rank">1</div>
+          <h3 class="name">Janneke</h3>
+          <div class="info-row">
+            <span class="label">Phubbing tijd</span>
+            <span class="value">2u 15m</span>
+          </div>
+          <div class="info-row">
+            <span class="label">Tijd tot phubbing</span>
+            <span class="value">5m 30s</span>
+          </div>
+          <div class="badge">📱 Meest verslaafd</div>
+        </div>
+      
+        <!-- Kaart 2 -->
+        <div class="card">
+          <div class="rank">2</div>
+          <h3 class="name">Mark</h3>
+          <div class="info-row">
+            <span class="label">Phubbing tijd</span>
+            <span class="value">1u 47m</span>
+          </div>
+          <div class="info-row">
+            <span class="label">Tijd tot phubbing</span>
+            <span class="value">2m 10s</span>
+          </div>
+          <div class="badge">⌛ Snelste switch</div>
+        </div>
+      
+        <!-- Kaart 3 -->
+        <div class="card">
+          <div class="rank">3</div>
+          <h3 class="name">Sara</h3>
+          <div class="info-row">
+            <span class="label">Phubbing tijd</span>
+            <span class="value">1u 30m</span>
+          </div>
+          <div class="info-row">
+            <span class="label">Tijd tot phubbing</span>
+            <span class="value">7m 45s</span>
+          </div>
+          <div class="badge">🔥 Actief tapper</div>
+        </div>
+      
+        <!-- Kaart 4 -->
+        <div class="card">
+          <div class="rank">4</div>
+          <h3 class="name">Pieter</h3>
+          <div class="info-row">
+            <span class="label">Phubbing tijd</span>
+            <span class="value">1u 22m</span>
+          </div>
+          <div class="info-row">
+            <span class="label">Tijd tot phubbing</span>
+            <span class="value">3m 55s</span>
+          </div>
+          <div class="badge">🎯 Focusheld</div>
+        </div>
+      
+        <!-- Kaart 5 -->
+        <div class="card">
+          <div class="rank">5</div>
+          <h3 class="name">Laura</h3>
+          <div class="info-row">
+            <span class="label">Phubbing tijd</span>
+            <span class="value">55m</span>
+          </div>
+          <div class="info-row">
+            <span class="label">Tijd tot phubbing</span>
+            <span class="value">20m 05s</span>
+          </div>
+          <div class="badge">🧘‍♀️ Rustigste</div>
+        </div>
+      
+        <!-- Kaart 6 -->
+        <div class="card">
+          <div class="rank">6</div>
+          <h3 class="name">Tom</h3>
+          <div class="info-row">
+            <span class="label">Phubbing tijd</span>
+            <span class="value">48m</span>
+          </div>
+          <div class="info-row">
+            <span class="label">Tijd tot phubbing</span>
+            <span class="value">25m 30s</span>
+          </div>
+          <div class="badge">🌱 Beginner</div>
         </div>
       </div>
-    </section>
-  
-    <!-- Nadelen sectie -->
-    <section id="nadelen">
-      <h2>Nadelen van Phubbing</h2>
-      <ul>
-        <li>
+      
+
+      <!-- “Zie meer” button -->
+      <button id="toggleButton" class="see-more" style="display: none;">
+        Zie meer ▼
+      </button>
+    </div>
+  </section>
+
+  <!-- Posters sectie -->
+  <section id="posters">
+    <div class="container">
+      <h2>Phubbing posters</h2>
+      <div class="posters-grid">
+        <div class="poster-item">
+          <img src="img/poster1.png" alt="Wat is Phubbing?">
+          <h3>Wat is Phubbing?</h3>
+          <p>Phubben is een samenstelling van de woorden <strong>phone</strong> en <strong>snubbing</strong> (negeren).</p>
+        </div>
+        <div class="poster-item">
+          <img src="img/poster2.png" alt="Phubben ondermijnt echte connectie">
           <h3>Phubben ondermijnt echte connectie</h3>
-          <p>
-            Wanneer je continu afgeleid bent door je telefoon, laat je onbewust zien dat het scherm belangrijker is dan de persoon tegenover je. Dat voelt voor de ander niet fijn.
-          </p>
-        </li>
-        <li>
-          <h3>Phubben verlaagt de kwaliteit van gesprekken</h3>
-          <p>
-            Goede gesprekken hebben aandacht nodig. Als je steeds wordt onderbroken door notificaties of even “snel iets checkt”, raken gesprekken oppervlakkig en ongeïnspireerd.
-          </p>
-        </li>
-        <li>
-          <h3>Phubben schaadt relaties</h3>
-          <p>
-            Of het nu gaat om je partner, vrienden of familie: mensen voelen zich genegeerd of minder belangrijk. Op lange termijn kan dit leiden tot minder vertrouwen en verbondenheid.
-          </p>
-        </li>
-        <li>
-          <h3>Phubben vermindert focus</h3>
-          <p>
-            Steeds switchen tussen gesprekken en je scherm maakt je brein moe. Het kost focus en belemmert je vermogen om écht aanwezig te zijn in het moment.
-          </p>
-        </li>
-      </ul>
-    </section>
-  </main>
-  
+          <p>Je laat onbewust zien dat het scherm belangrijker is dan de persoon tegenover je. Dat voelt voor de ander niet fijn.</p>
+        </div>
+        <div class="poster-item">
+          <img src="img/poster3.png" alt="Telefoon verslaving">
+          <h3>Telefoon verslaving</h3>
+          <p>62% van jongeren geeft aan verslaafd te zijn aan hun telefoon. Een telefoonverslaving kan leiden tot verhoogde stress, angst en zelfs depressie.</p>
+        </div>
+        <div class="poster-item">
+          <img src="img/poster4.png" alt="Overmatig telefoongebruik">
+          <h3>Overmatig telefoongebruik</h3>
+          <p>Het verhoogt risico op aandoeningen zoals slaapstoornissen, stress, angst, depressie en zelfs suïcidaal gedrag.</p>
+        </div>
+        <div class="poster-item">
+          <img src="img/poster5.png" alt="Phubben verminderd focus">
+          <h3>Phubben verminderd focus</h3>
+          <p>Steeds switchen tussen gesprekken en je scherm maakt je brein moe. Het kost focus en belemmert je vermogen om écht aanwezig te zijn in het moment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer>
     <div class="container">
@@ -82,10 +168,10 @@
     </div>
   </footer>
 
-  <!-- Load GSAP and ScrollTrigger via CDN -->
+  <!-- GSAP scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <!-- Custom GSAP animations file -->
-  <script src="animations.js"></script>
+  <!-- Eigen script -->
+  <script src="animations.js" defer></script>
 </body>
 </html>

@@ -1,4 +1,3 @@
-/* :root with CSS variables for consistent styling */
 :root {
   --font-primary: 'Montserrat', sans-serif;
   --color-bg: #E6EED6;
@@ -6,136 +5,190 @@
   --color-primary: #80A4ED;
   --color-secondary: #AD5C83;
   --color-accent1: #F9B5AC;
-  --color-accent2: #CFD186;
   --color-white: #fff;
-  --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Basic reset and global settings */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; padding: 0; box-sizing: border-box;
 }
 
 body {
   font-family: var(--font-primary);
-  background-color: var(--color-bg);
+  background: var(--color-bg);
   color: var(--color-text);
   line-height: 1.6;
 }
 
-/* Centered container */
 .container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 1rem;
+  width: 90%; max-width: 1200px; margin: auto; padding: 0 1rem;
 }
 
-/* Header styling */
+/* Header */
 header {
   background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
   color: var(--color-white);
   text-align: center;
-  padding: 4rem 1rem;
+  padding: 3rem 1rem;
   margin-bottom: 2rem;
   border-radius: 0 0 20px 20px;
 }
-
 header h1 {
-  font-size: 3rem;
+  font-size: 2.5rem; margin-bottom: .5rem;
+}
+header p {
+  font-size: 1rem; max-width: 700px; margin: auto;
+}
+
+/* Leaderboard als cards */
+#leaderboard { margin: 2rem 0; }
+#leaderboard h2 {
+  text-align: center;
+  color: var(--color-secondary);
+  font-size: 1.8rem;
   margin-bottom: 1rem;
 }
-
-header p {
+#leaderboard .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+#leaderboard .card {
+  background: var(--color-white);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform .2s ease;
+}
+#leaderboard .card:hover {
+  transform: translateY(-4px);
+}
+#leaderboard .rank {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  width: 32px; height: 32px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+}
+#leaderboard .name {
+  margin-top: 0; margin-bottom: .5rem;
   font-size: 1.2rem;
-  max-width: 700px;
-  margin: auto;
+  color: var(--color-secondary);
+}
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin: .4rem 0;
+}
+.label {
+  font-weight: 600;
+  font-size: .95rem;
+}
+.value {
+  font-size: .95rem;
+}
+.badge {
+  margin-top: 15px;
+  align-self: center;
+  padding: .5rem 1rem;
+  border-radius: 20px;
+  background: var(--color-accent1);
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: .95rem;
 }
 
-/* Main content */
-main {
-  margin-bottom: 2rem;
+/* Search field */
+.search-container {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+#searchInput {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--color-primary);
+  border-radius: 20px;
+  outline: none;
+  font-size: 1rem;
 }
 
-/* Section styling */
-section {
+/* “Zie meer” knop */
+.see-more {
+  display: block;
+  margin: 1.5rem auto 0;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 20px;
+  background: var(--color-secondary);
+  color: var(--color-white);
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: background .2s ease;
+}
+.see-more:hover {
+  background: var(--color-primary);
+}
+
+/* Posters sectie */
+#posters {
   background-color: var(--color-white);
   margin: 2rem 0;
   padding: 2rem;
   border-radius: 10px;
   box-shadow: var(--shadow);
 }
-
-/* Intro section with a gradient background */
-#intro {
-  background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
-  color: var(--color-white);
+#posters h2 {
+  color: var(--color-secondary);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
-
-/* Intro content (text + images) */
-.intro-content {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 2rem;
-}
-
-/* Images container */
-.intro-images {
-  flex: 1 1 100%;
-  display: flex;
-  flex-direction: row;       /* Initially, display images side by side */
-  justify-content: space-between;
+.posters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
 }
-
-.intro-images img {
-  width: 100%;
-  max-width: 48%;            /* Each image takes up about half of the container */
-  height: auto;
+.poster-item {
+  background: var(--color-bg);
   border-radius: 10px;
   box-shadow: var(--shadow);
-  object-fit: cover;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
-
-/* Text section in intro */
-.intro-text {
-  flex: 1 1 300px;
+.poster-item img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin-bottom: 0.75rem;
 }
-
-/* Nadelen section with a gradient background */
-#nadelen {
-  background: linear-gradient(135deg, var(--color-accent1), var(--color-accent2));
-  color: var(--color-white);
-}
-
-#nadelen ul {
-  list-style-type: none;
-}
-
-#nadelen li {
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-#nadelen li h3 {
-  font-size: 1.6rem;
+.poster-item h3 {
+  font-size: 1.2rem;
   margin-bottom: 0.5rem;
+  color: var(--color-secondary);
+}
+.poster-item p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  flex-grow: 1;
+  margin-bottom: 0;
 }
 
-/* Section headings */
-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: var(--color-white);
-}
-
-/* Footer styling */
+/* Footer */
 footer {
-  background-color: var(--color-accent2);
+  background-color: var(--color-accent1);
   color: var(--color-white);
   text-align: center;
   padding: 1.5rem 0;
@@ -143,92 +196,47 @@ footer {
   border-radius: 20px 20px 0 0;
 }
 
-/* Responsive styling */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 2.2rem;
-  }
-  
-  header p {
-    font-size: 1rem;
-  }
-  
-  section h2 {
-    font-size: 1.8rem;
-  }
-  
-  #nadelen li h3 {
-    font-size: 1.3rem;
-  }
-  
-  section {
-    padding: 1.5rem;
-    margin: 1rem 0;
-  }
-
-  /* Stack images on smaller devices for readability */
-  .intro-images {
-    flex-direction: column;
-    align-items: center;  /* Center images horizontally when stacked */
-  }
-
-  .intro-images img {
-    width: 100%;
-    max-width: 100%;      /* Allow images to use the full width of the container */
-    display: block;
-    margin: 0 auto;       /* Center block images */
-  }
+/* Responsive tweaks */
+@media (max-width:768px){
+  header h1 { font-size: 2rem; }
+  header p  { font-size: .9rem; }
+}
+@media (max-width:480px){
+  header h1        { font-size: 1.6rem; }
+  header p         { font-size: .8rem; }
+  .poster-item h3  { font-size: 1.1rem; }
+  .poster-item p   { font-size: .85rem; }
 }
 
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 1.8rem;
-  }
-  
-  header p {
-    font-size: 0.9rem;
-  }
-  
-  section h2 {
-    font-size: 1.6rem;
-  }
-  
-  #nadelen li h3 {
-    font-size: 1.2rem;
-  }
+/* === Extra shaming voor top 3 Wall of Shame === */
+#cardsContainer .card:nth-child(1) {
+  border: 3px dashed #FFD700;               /* goud kader */
+  background: rgba(255, 215, 0, 0.15);       /* subtiele goud‑achtergrond */
+}
+#cardsContainer .card:nth-child(1) .rank {
+  background: #FFD700;                       /* goud voor de cirkel */
+  color: #333;
 }
 
-
-/* Minimal custom scroll bar styling using your color palette */
-
-/* For Firefox: set the thumb & track colors, and reduce the width */
-html {
-  scrollbar-width: thin; /* "auto" or "thin" */
-  scrollbar-color: var(--color-primary) var(--color-bg);
+#cardsContainer .card:nth-child(2) {
+  border: 3px dashed #C0C0C0;               /* zilver kader */
+  background: rgba(192, 192, 192, 0.15);     /* subtiel zilver */
+}
+#cardsContainer .card:nth-child(2) .rank {
+  background: #C0C0C0;
+  color: #333;
 }
 
-/* For WebKit-based browsers (Chrome, Safari, Edge) */
-::-webkit-scrollbar {
-  width: 8px; /* Adjust width for a minimal feel */
-  background-color: var(--color-bg); /* Scrollbar track color */
+#cardsContainer .card:nth-child(3) {
+  border: 3px dashed #CD7F32;               /* brons kader */
+  background: rgba(205, 127, 50, 0.15);      /* subtiel brons */
+}
+#cardsContainer .card:nth-child(3) .rank {
+  background: #CD7F32;
+  color: #fff;
 }
 
-::-webkit-scrollbar-track {
-  background-color: var(--color-bg);
-  /* Optional: Add border or subtle styling for the track
-     border: 1px solid var(--color-accent1);
-     border-radius: 4px;
-  */
+/* Optioneel: dim de rest een beetje */
+#cardsContainer .card:nth-child(n+4) {
+  opacity: 0.7;
 }
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--color-primary); /* Thumb color */
-  border-radius: 4px;
-  /* A small border to create space around the thumb */
-  border: 2px solid var(--color-bg); 
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: var(--color-secondary);
-}
-
